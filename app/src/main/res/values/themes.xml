@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
     
-    <style name="Theme.Appsychology.NoActionBar">
+    <style name="Theme.Appsychology.NoActionBar" parent="Theme.Appsychology">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
