@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.APPsychology" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Appsychology" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/red_A200</item>
         <item name="colorPrimaryVariant">@color/redDark_A200</item>
