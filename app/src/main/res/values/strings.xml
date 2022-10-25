@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">APPsychology</string>
+    <string name="text_btnSomos">Quienes somos</string>
+    <string name="text_btnRegister">Registrar</string>
+    <string name="text_btnLogin">INICIAR SESION</string>
+    <string name="todo">TODO</string>
 </resources>
