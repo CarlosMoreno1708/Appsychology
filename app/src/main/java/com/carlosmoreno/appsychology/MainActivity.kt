@@ -3,6 +3,7 @@ package com.carlosmoreno.appsychology
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import com.carlosmoreno.appsychology.databinding.ActivityAboutBinding
 import com.carlosmoreno.appsychology.databinding.ActivityMainBinding
 
@@ -14,8 +15,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnSomos.setOnClickListener{
-            startActivity(Intent(this, ActivityAboutBinding::class.java) )
+        binding.somosButton.setOnClickListener{
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
         }
     }
 }
