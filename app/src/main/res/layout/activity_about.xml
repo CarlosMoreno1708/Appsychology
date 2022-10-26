@@ -1,89 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
-    android:paddingStart="30dp"
-    android:paddingEnd="30dp">
+    android:background="@drawable/fondo">
 
-    <TextView
-        android:id="@+id/title2Text"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textColor="@color/redDark_A200"
-        android:textSize="30sp"
-        android:textStyle="italic|bold"
-        app:layout_constraintBottom_toTopOf="@id/about1Text"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp">
 
-    <TextView
-        android:id="@+id/about1Text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/text_quienesSomos1"
-        android:textAlignment="center"
-        android:textColor="#b61827"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/aboutImage"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title2Text" />
+        <TextView
+            android:id="@+id/title2Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/redDark_A200"
+            android:textSize="30sp"
+            android:textStyle="italic|bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/aboutImage"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image1" />
+        <TextView
+            android:id="@+id/about1Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/text_quienesSomos1"
+            android:textAlignment="center"
+            android:textColor="#b61827"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title2Text" />
 
-    <TextView
-        android:id="@+id/about2Text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/text_quienesSomos2"
-        android:textAlignment="center"
-        android:textColor="#b61827"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/authorText"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/aboutImage"
-        app:layout_constraintVertical_bias="0.05" />
+        <ImageView
+            android:id="@+id/aboutImage"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/about1Text"
+            app:srcCompat="@drawable/image1" />
 
-    <TextView
-        android:id="@+id/authorText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/text_autor"
-        android:textAlignment="center"
-        android:textColor="#b61827"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/derechosText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/about2Text" />
+        <TextView
+            android:id="@+id/about2Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/text_quienesSomos2"
+            android:textAlignment="center"
+            android:textColor="#b61827"
+            android:textSize="15sp"
+            android:textStyle="bold"
 
-    <TextView
-        android:id="@+id/derechosText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Todos los derechos reservados"
-        android:textAlignment="center"
-        android:textColor="#b61827"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/aboutImage" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/authorText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/text_autor"
+            android:textAlignment="center"
+            android:textColor="#b61827"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/about2Text" />
+
+        <TextView
+            android:id="@+id/derechosText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Todos los derechos reservados."
+            android:textAlignment="center"
+            android:textColor="#b61827"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/authorText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
