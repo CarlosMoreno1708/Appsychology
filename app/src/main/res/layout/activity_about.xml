@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo">
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".view.ui.activities.AboutActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp">
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fondo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/title2Text"
@@ -20,9 +32,11 @@
             android:layout_marginTop="25dp"
             android:text="@string/app_name"
             android:textAlignment="center"
-            android:textColor="@color/redDark_A200"
+            android:textColor="@color/secondaryColor"
             android:textSize="30sp"
             android:textStyle="italic|bold"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,6 +51,8 @@
             android:textColor="#b61827"
             android:textSize="15sp"
             android:textStyle="bold"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title2Text" />
@@ -47,6 +63,8 @@
             android:layout_height="150dp"
             android:layout_marginTop="20dp"
             android:scaleType="centerCrop"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/about1Text"
@@ -62,7 +80,8 @@
             android:textColor="#b61827"
             android:textSize="15sp"
             android:textStyle="bold"
-
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/aboutImage" />
@@ -71,26 +90,30 @@
             android:id="@+id/authorText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:text="@string/text_autor"
             android:textAlignment="center"
             android:textColor="#b61827"
             android:textStyle="bold"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/about2Text" />
+            app:layout_constraintTop_toBottomOf="@id/about2Text"/>
 
         <TextView
             android:id="@+id/derechosText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:text="Todos los derechos reservados."
             android:textAlignment="center"
             android:textColor="#b61827"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/authorText" />
+            app:layout_constraintTop_toBottomOf="@id/authorText"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -1,10 +1,8 @@
-package com.carlosmoreno.appsychology
+package com.carlosmoreno.appsychology.view.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Window
-import com.carlosmoreno.appsychology.databinding.ActivityAboutBinding
 import com.carlosmoreno.appsychology.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.loginButton.setOnClickListener{
-            val intent = Intent(this,LoginActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 

@@ -1,4 +1,4 @@
-package com.carlosmoreno.appsychology
+package com.carlosmoreno.appsychology.view.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

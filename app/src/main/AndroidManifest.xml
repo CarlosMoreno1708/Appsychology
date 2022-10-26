@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
@@ -11,44 +11,54 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Appsychology"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+
         <activity
-            android:name=".RegisterActivity"
+            android:name=".view.ui.activities.RegisterActivity"
             android:exported="false"
             android:label="Registrarse"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".view.ui.activities.MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".view.ui.activities.LoginActivity"
             android:exported="false"
             android:label="Iniciar sesión"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".view.ui.activities.MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".AboutActivity"
+            android:name=".view.ui.activities.AboutActivity"
             android:exported="false"
             android:label="Quienes somos"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".view.ui.activities.MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
-                android:value=".MainActivity" />
+                android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".view.ui.activities.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Appsychology.NoActionBar">
+
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view.ui.activities.Splash"
+            android:theme="@style/Theme.Appsychology.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

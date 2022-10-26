@@ -1,7 +1,8 @@
-package com.carlosmoreno.appsychology
+package com.carlosmoreno.appsychology.view.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.carlosmoreno.appsychology.R
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -7,7 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red_A200">#ff5252</color>
+    <color name="primaryColor">#ff5252</color>
+    <color name="primaryColor2">#f999a5</color>
     <color name="redLight_A200">#ff867f</color>
     <color name="redDark_A200">#c50e29</color>
+    <color name="primaryColor3">#78b2ba</color>
+    <color name="secondaryColor">#523026</color>
+    <color name="secondaryColor2">#c7747d</color>
+    #ff8a80
 </resources>
