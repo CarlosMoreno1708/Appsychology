@@ -13,7 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-    
+
     <style name="Theme.Appsychology.NoActionBar" parent="Theme.Appsychology">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

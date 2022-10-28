@@ -2,11 +2,19 @@
     <string name="app_name">Appsychology</string>
     <string name="text_somosButton">Quienes somos</string>
     <string name="text_registerButton">Registrar</string>
-    <string name="text_loginButton">INICIAR SESION</string>
+    <string name="text_loginButton">Iniciar sesión</string>
+    <string name="text_forgetKey"><u>¿olvidó contraseña de acceso?</u></string>
     <string name="text_quienesSomos1">La Salud Mental es un estado de bienestar que nos permite desarrollar nuestro potencial y cumplir las metas de nuestra vida, por eso somos queremos darte un espacio en el cuál puedas contactar a un psicólogo y así fortalecer el cuidado de tu salud mental.</string>
     <string name="text_quienesSomos2">Somos una App diseñada para facilitar el contacto con profesionales en psicología clínica certificados, de tal manera que puedas programar la cita de forma rápida y pueda vincularse fácilmente a un proceso de psicoterapia.</string>
     <string name="text_autor">Autores: Carlos Moreno, Diana Ordoñez, Armando Garzón, Duván Fernandez, German Varga</string>
     <string name="text_user">Usuario</string>
     <string name="text_password">Contraseña</string>
     <string name="todo">TODO</string>
+    <string name="text_firstName">Nombre</string>
+    <string name="text_lastName">Apellido</string>
+    <string name="text_email">Correo electrónico</string>
+    <string name="text_cellPhone">Teléfono</string>
+    <string name="text_address">Dirección</string>
+    <string name="title_ingresar_datos">Ingresar datos</string>
+    <string name="text_recuperar">Recuperar</string>
 </resources>

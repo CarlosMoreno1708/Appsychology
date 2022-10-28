@@ -11,24 +11,25 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/fondo">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:contentDescription="@string/todo"
-            android:scaleType="centerCrop"
-            android:src="@drawable/fondo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:contentDescription="@string/todo"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:background="@drawable/fondo"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"/>-->
 
         <TextView
-            android:id="@+id/title3Text"
+            android:id="@+id/titleText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/app_name"
             android:textAlignment="center"
             android:textColor="@color/secondaryColor"
@@ -38,66 +39,69 @@
             android:paddingEnd="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/logoImage" />
 
         <ImageView
             android:id="@+id/logoImage"
             android:layout_width="160dp"
             android:layout_height="140dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
             android:contentDescription="@string/todo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title3Text"
+            app:layout_constraintBottom_toTopOf="@id/userTextInput"
             app:srcCompat="@drawable/logo" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/usuario"
+            android:id="@+id/userTextInput"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:hint="@string/text_user"
             android:importantForAutofill="no"
-            android:paddingStart="40dp"
-            android:paddingEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:textColorHint="@color/secondaryColor"
-            app:boxStrokeColor="@color/primaryColor"
             app:hintTextColor="@color/secondaryColor"
+            app:boxStrokeColor="@color/redDark_A200"
+            app:startIconDrawable="@drawable/ic_user"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/logoImage"
-            tools:ignore="TextContrastCheck">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="TextContrastCheck" >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/userEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lines="1"
                 android:textColor="@color/secondaryColor"
+                android:inputType="text"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Contraseña"
+            android:id="@+id/passwordTextInput"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="@string/text_password"
             android:importantForAutofill="no"
-            android:paddingStart="40dp"
-            android:paddingEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:textColorHint="@color/secondaryColor"
+            app:startIconDrawable="@drawable/ic_lock"
+            app:endIconMode="password_toggle"
             app:hintTextColor="@color/secondaryColor"
             app:boxStrokeColor="@color/primaryColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/usuario"
+            app:layout_constraintTop_toBottomOf="@id/userTextInput"
             tools:ignore="TextContrastCheck">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -106,15 +110,36 @@
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/ingresarButton"
-            android:layout_width="200dp"
+        <TextView
+            android:id="@+id/forgetKeyLink"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:text="@string/text_forgetKey"
+            android:textColor="@color/secondaryColor"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintTop_toBottomOf="@id/passwordTextInput"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ingresarButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
             android:text="Ingresar"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/secondaryColor"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:padding="1dp"
+            android:background="@drawable/style_custom_button"
+            app:backgroundTint="@null"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Contraseña"
+            app:layout_constraintTop_toBottomOf="@id/forgetKeyLink"
             tools:ignore="TextContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

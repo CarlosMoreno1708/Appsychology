@@ -13,7 +13,7 @@
     android:layout_height="wrap_content">
 
         <ImageView
-            android:src="@drawable/fondo"
+            android:background="@drawable/fondo"
             android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -49,35 +49,56 @@
 
         <Button
             android:id="@+id/somosButton"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:text="@string/text_somosButton"
-            android:textAlignment="inherit"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
             android:layout_marginTop="40dp"
+            android:text="@string/text_somosButton"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/secondaryColor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="@drawable/style_custom_button"
+            app:backgroundTint="@null"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/logoImage"/>
+            app:layout_constraintTop_toBottomOf="@id/logoImage" />
 
         <Button
             android:id="@+id/registerButton"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
             android:text="@string/text_registerButton"
-            android:layout_marginTop="90dp"
-            android:layout_marginBottom="30dp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/secondaryColor"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:padding="1dp"
+            android:background="@drawable/style_custom_button"
+            app:backgroundTint="@null"
             app:layout_constraintEnd_toStartOf="@id/loginButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/somosButton"/>
+            app:layout_constraintTop_toBottomOf="@id/somosButton" />
 
         <Button
             android:id="@+id/loginButton"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
             android:text="@string/text_loginButton"
-            android:layout_marginTop="90dp"
-            android:layout_marginBottom="30dp"
+            android:padding="1dp"
+            android:textAllCaps="false"
+            android:textColor="@color/secondaryColor"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            android:background="@drawable/style_custom_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/registerButton"
-            app:layout_constraintTop_toBottomOf="@id/somosButton" />
+            app:layout_constraintTop_toBottomOf="@id/somosButton"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
