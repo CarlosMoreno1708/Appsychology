@@ -66,10 +66,15 @@
             app:hintTextColor="@color/secondaryColor"
             app:boxStrokeColor="@color/redDark_A200"
             app:startIconDrawable="@drawable/ic_user"
+            app:startIconTint="@color/colorIcon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/red"
+            app:boxStrokeErrorColor="@color/red"
             tools:ignore="TextContrastCheck" >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -93,12 +98,18 @@
             android:layout_marginEnd="40dp"
             android:textColorHint="@color/secondaryColor"
             app:startIconDrawable="@drawable/ic_lock"
+            app:startIconTint="@color/colorIcon"
             app:endIconMode="password_toggle"
+            app:endIconTint="@color/colorIcon"
             app:hintTextColor="@color/secondaryColor"
-            app:boxStrokeColor="@color/primaryColor"
+            app:boxStrokeColor="@color/redDark_A200"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/userTextInput"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/red"
+            app:boxStrokeErrorColor="@color/red"
             tools:ignore="TextContrastCheck">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -106,6 +117,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPassword"
+                android:textColor="@color/secondaryColor"
                 android:lines="1"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -126,7 +138,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:text="Ingresar"
+            android:text="@string/text_ingresar"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
             android:textAlignment="center"

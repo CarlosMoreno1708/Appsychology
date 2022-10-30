@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,6 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorIcon">#616161</color>
+    <color name="red">#D50000</color>
     <color name="primaryColor">#ff5252</color>
     <color name="primaryColor2">#f999a5</color>
     <color name="redLight_A200">#ff867f</color>
@@ -14,5 +16,6 @@
     <color name="primaryColor3">#78b2ba</color>
     <color name="secondaryColor">#523026</color>
     <color name="secondaryColor2">#c7747d</color>
-    #ff8a80
+<!--Se habilita esta opción para cambiar el color por defecto del contorno de textInputLayout-->
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true" >#616161</color>
 </resources>
