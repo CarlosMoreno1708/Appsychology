@@ -24,7 +24,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/psychoPhotoImage"
+                android:id="@+id/psycoPhotoImage"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
 
@@ -34,24 +34,27 @@
                 app:srcCompat="@drawable/psicologo1" />
 
             <TextView
-                android:id="@+id/psychoText"
+                android:id="@+id/psycoPerfilText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="Perfil: "
                 android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@+id/psychoPhotoImage"
+                android:textColor="@color/secondaryColor"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/psycoPhotoImage"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/psychoNameText"
+                android:id="@+id/psycoNameText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="Nombre: "
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@+id/psychoPhotoImage"
-                app:layout_constraintTop_toBottomOf="@+id/psychoText" />
+                android:textSize="18sp"
+                android:textColor="@color/secondaryColor"
+                app:layout_constraintStart_toEndOf="@+id/psycoPhotoImage"
+                app:layout_constraintTop_toBottomOf="@+id/psycoPerfilText" />
 
 <!--            <TextView-->
 <!--                android:id="@+id/psychoPhoneText"-->

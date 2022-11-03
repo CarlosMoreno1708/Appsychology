@@ -1,8 +1,10 @@
 package com.carlosmoreno.appsychology.view.ui.activities
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.core.util.PatternsCompat
 import com.carlosmoreno.appsychology.R
@@ -19,7 +21,13 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.registerButton2.setOnClickListener {
             validate()
+            navegateTo(it)
         }
+    }
+
+    private fun navegateTo(view: View) {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
     }
 
     private fun validate() {
@@ -35,8 +43,29 @@ class RegisterActivity : AppCompatActivity() {
         if (false in result){
             return
         }
-        Toast.makeText(this, "Registro válido", Toast.LENGTH_SHORT).show()
+        registerUser()
+    }
 
+    private fun registerUser(){
+        val user = binding.userTextInput.editText?.text.toString()
+        val password = binding.passwordTextInput.editText?.text.toString()
+        val name = binding.nameTextInput.editText?.text.toString()
+        val email = binding.emailTextInput.editText?.text.toString()
+        val phone = binding.phoneTextInput.editText?.text.toString()
+        val address = binding.addressTextInput.editText?.text.toString()
+
+        val date = getSharedPreferences(user, Context.MODE_PRIVATE)
+        val edit = date.edit()
+
+        edit.putString("user", user)
+        edit.putString("passwordUser", password)
+        edit.putString("nameUser", name)
+        edit.putString("emailUser", email)
+        edit.putString("phoneUser", phone)
+        edit.putString("addressUser", address)
+        edit.commit()
+
+        Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
     }
 
     private fun validateName():Boolean{
@@ -74,6 +103,7 @@ class RegisterActivity : AppCompatActivity() {
             true
         }
     }
+
     private fun validateAddress(): Boolean{
         val address = binding.addressTextInput.editText?.text.toString()
         return if (address.isEmpty()){
@@ -85,6 +115,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
     }
+
     private fun validateUser(): Boolean{
         val user = binding.userTextInput.editText?.text.toString()
         return if (user.isEmpty()){
@@ -96,6 +127,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
     }
+
     private fun validatePassword(): Boolean{
         val password = binding.passwordTextInput.editText?.text.toString()
         val requerimientos = Pattern.compile(

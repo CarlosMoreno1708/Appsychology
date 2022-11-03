@@ -13,6 +13,7 @@
     android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@drawable/fondo"
@@ -50,7 +51,7 @@
             app:srcCompat="@drawable/logo" />
 
         <Button
-            android:id="@+id/somosButton"
+            android:id="@+id/aboutButton"
             android:layout_width="130dp"
             android:layout_height="60dp"
             android:layout_marginTop="40dp"
@@ -72,6 +73,7 @@
             android:layout_width="175dp"
             android:layout_height="50dp"
             android:layout_marginTop="80dp"
+            android:layout_marginBottom="70dp"
             android:background="@drawable/style_custom_button"
             android:padding="1dp"
             android:text="@string/text_registerButton"
@@ -81,9 +83,10 @@
             android:textSize="17sp"
             android:textStyle="bold"
             app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/loginButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/somosButton"
+            app:layout_constraintTop_toBottomOf="@id/aboutButton"
             tools:ignore="TextContrastCheck" />
 
         <Button
@@ -91,6 +94,7 @@
             android:layout_width="175dp"
             android:layout_height="50dp"
             android:layout_marginTop="80dp"
+            android:layout_marginBottom="70dp"
             android:background="@drawable/style_custom_button"
             android:padding="1dp"
             android:text="@string/text_loginButton"
@@ -99,9 +103,10 @@
             android:textSize="17sp"
             android:textStyle="bold"
             app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/registerButton"
-            app:layout_constraintTop_toBottomOf="@id/somosButton"
+            app:layout_constraintTop_toBottomOf="@id/aboutButton"
             tools:ignore="TextContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

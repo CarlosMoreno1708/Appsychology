@@ -1,5 +1,6 @@
 package com.carlosmoreno.appsychology.view.ui.activities
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,9 @@ import com.carlosmoreno.appsychology.databinding.ActivityLoginBinding
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+
+    val userDefault = "Carlos12"
+    val passwordDefault = "Carlos12&"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,16 +33,29 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun validate() {
+        val userTextInput = binding.userTextInput.editText?.text.toString()
+        val passwordTextInput = binding.passwordTextInput.editText?.text.toString()
+        val date = getSharedPreferences(userTextInput, Context.MODE_PRIVATE)
+
+        val userDB = date.getString("nameUser","")
+        val passwordDB = date.getString("passwordUser","")
+
         val result = arrayOf(validateUser(), validatePassword())
 
         if (false in result){
             return
         }
-        Toast.makeText(this, "Datos válidos", Toast.LENGTH_SHORT).show()
 
+        if ((userTextInput == userDB) && (passwordTextInput == passwordDB)){
+            val intent = Intent(this, UserActivity::class.java)
+            startActivity(intent)
+        }else{
+            Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_SHORT).show()
+        }
+//        Toast.makeText(this, "Datos válidos", Toast.LENGTH_SHORT).show()
     }
 
-    private fun validateUser(): Boolean{
+     private fun validateUser(): Boolean{
         val user = binding.userTextInput.editText?.text.toString()
         return if (user.isEmpty()){
             binding.userTextInput.error = "Este campo no puede estar vacío"

@@ -1,11 +1,13 @@
 package com.carlosmoreno.appsychology.view.ui.activities
 
+import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.carlosmoreno.appsychology.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,19 +15,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.somosButton.setOnClickListener{
-            val intent = Intent(this, AboutActivity::class.java)
-            startActivity(intent)
+        binding.aboutButton.setOnClickListener{
+            navegateTo(PhotoActivity())
         }
 
         binding.loginButton.setOnClickListener{
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            navegateTo(LoginActivity())
         }
 
         binding.registerButton.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            navegateTo(RegisterActivity())
         }
+    }
+
+    private fun navegateTo(activity: Activity){
+        val intent = Intent(this, activity::class.java)
+        startActivity(intent)
     }
 }

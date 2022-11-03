@@ -13,17 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/fondo">
 
-<!--        <ImageView-->
-<!--            android:src="@drawable/fondo"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:contentDescription="@string/todo"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
-        <TextView
+   <TextView
             android:id="@+id/datosTitle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -49,9 +39,9 @@
             android:layout_marginEnd="40dp"
             android:textColorHint="@color/secondaryColor"
             app:hintTextColor="@color/secondaryColor"
-            app:boxStrokeColor="@color/redDark_A200"
+            app:boxStrokeColor="@color/gray"
             app:startIconDrawable="@drawable/ic_user"
-            app:startIconTint="@color/colorIcon"
+            app:startIconTint="@color/gray"
             app:errorEnabled="true"
             app:errorIconDrawable="@null"
             app:errorTextColor="@color/red"
@@ -110,9 +100,9 @@
             android:layout_marginEnd="40dp"
             android:textColorHint="@color/secondaryColor"
             app:hintTextColor="@color/secondaryColor"
-            app:boxStrokeColor="@color/redDark_A200"
+            app:boxStrokeColor="@color/gray"
             app:startIconDrawable="@drawable/ic_email"
-            app:startIconTint="@color/colorIcon"
+            app:startIconTint="@color/gray"
             app:errorEnabled="true"
             app:errorIconDrawable="@null"
             app:errorTextColor="@color/red"
@@ -143,9 +133,9 @@
             android:layout_marginEnd="40dp"
             android:textColorHint="@color/secondaryColor"
             app:hintTextColor="@color/secondaryColor"
-            app:boxStrokeColor="@color/redDark_A200"
+            app:boxStrokeColor="@color/gray"
             app:startIconDrawable="@drawable/ic_phone"
-            app:startIconTint="@color/colorIcon"
+            app:startIconTint="@color/gray"
             app:errorEnabled="true"
             app:errorIconDrawable="@null"
             app:errorTextColor="@color/red"
@@ -176,9 +166,9 @@
             android:layout_marginEnd="40dp"
             android:textColorHint="@color/secondaryColor"
             app:hintTextColor="@color/secondaryColor"
-            app:boxStrokeColor="@color/redDark_A200"
+            app:boxStrokeColor="@color/gray"
             app:startIconDrawable="@drawable/ic_location"
-            app:startIconTint="@color/colorIcon"
+            app:startIconTint="@color/gray"
             app:errorEnabled="true"
             app:errorIconDrawable="@null"
             app:errorTextColor="@color/red"
@@ -209,9 +199,9 @@
             android:layout_marginEnd="40dp"
             android:textColorHint="@color/secondaryColor"
             app:hintTextColor="@color/secondaryColor"
-            app:boxStrokeColor="@color/redDark_A200"
+            app:boxStrokeColor="@color/gray"
             app:startIconDrawable="@drawable/ic_user"
-            app:startIconTint="@color/colorIcon"
+            app:startIconTint="@color/gray"
             app:errorEnabled="true"
             app:errorIconDrawable="@null"
             app:errorTextColor="@color/red"
@@ -242,11 +232,11 @@
             android:layout_marginEnd="40dp"
             android:textColorHint="@color/secondaryColor"
             app:hintTextColor="@color/secondaryColor"
-            app:boxStrokeColor="@color/redDark_A200"
+            app:boxStrokeColor="@color/gray"
             app:startIconDrawable="@drawable/ic_lock"
-            app:startIconTint="@color/colorIcon"
+            app:startIconTint="@color/gray"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/colorIcon"
+            app:endIconTint="@color/gray"
             app:errorEnabled="true"
             app:errorIconDrawable="@null"
             app:errorTextColor="@color/red"
@@ -272,7 +262,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="25dp"
             android:layout_marginRight="40dp"
             android:background="@drawable/style_custom_button"
             android:padding="1dp"
@@ -283,6 +274,7 @@
             android:textSize="17sp"
             android:textStyle="bold"
             app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextInput"

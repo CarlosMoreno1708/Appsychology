@@ -7,21 +7,23 @@
     tools:context=".view.ui.activities.PhotoActivity">
 
     <ImageView
-        android:id="@+id/psychoPhotoImage"
-        android:layout_width="300dp"
-        android:layout_height="400dp"
+        android:id="@+id/photoImage"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:contentDescription="@string/todo"
         android:src="@drawable/psicologo1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/captureButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/photoButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:gravity="center"
         android:text="CAPTURAR"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/psychoPhotoImage" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/photoImage"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

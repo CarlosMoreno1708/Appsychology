@@ -20,4 +20,7 @@
     <string name="text_recuperar">Recuperar</string>
     <string name="text_ingresar">Ingresar</string>
     <string name="text_registrar">Registrar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_cerrar_sesion">Cerrar sesión</string>
 </resources>
