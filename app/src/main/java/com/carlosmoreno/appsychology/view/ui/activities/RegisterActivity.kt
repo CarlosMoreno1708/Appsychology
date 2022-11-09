@@ -21,13 +21,7 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.registerButton2.setOnClickListener {
             validate()
-            navegateTo(it)
         }
-    }
-
-    private fun navegateTo(view: View) {
-        val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
     }
 
     private fun validate() {
@@ -57,15 +51,20 @@ class RegisterActivity : AppCompatActivity() {
         val date = getSharedPreferences(user, Context.MODE_PRIVATE)
         val edit = date.edit()
 
-        edit.putString("user", user)
-        edit.putString("passwordUser", password)
-        edit.putString("nameUser", name)
-        edit.putString("emailUser", email)
-        edit.putString("phoneUser", phone)
-        edit.putString("addressUser", address)
-        edit.commit()
+        edit.apply{
+            putString("user", user)
+            putString("password", password)
+            putString("name", name)
+            putString("email", email)
+            putString("phone", phone)
+            putString("address", address)
+            commit()
+        }
 
         Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+        //Para navegar a la activity LoginActivity
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
     }
 
     private fun validateName():Boolean{

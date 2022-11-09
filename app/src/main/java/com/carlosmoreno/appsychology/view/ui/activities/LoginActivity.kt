@@ -14,9 +14,6 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
 
-    val userDefault = "Carlos12"
-    val passwordDefault = "Carlos12&"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -37,8 +34,8 @@ class LoginActivity : AppCompatActivity() {
         val passwordTextInput = binding.passwordTextInput.editText?.text.toString()
         val date = getSharedPreferences(userTextInput, Context.MODE_PRIVATE)
 
-        val userDB = date.getString("nameUser","")
-        val passwordDB = date.getString("passwordUser","")
+        val userDB = date.getString("user","")
+        val passwordDB = date.getString("password","")
 
         val result = arrayOf(validateUser(), validatePassword())
 
@@ -48,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
 
         if ((userTextInput == userDB) && (passwordTextInput == passwordDB)){
             val intent = Intent(this, UserActivity::class.java)
+            intent.putExtra(UserActivity.EXTRA_USER, userTextInput)
             startActivity(intent)
         }else{
             Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_SHORT).show()

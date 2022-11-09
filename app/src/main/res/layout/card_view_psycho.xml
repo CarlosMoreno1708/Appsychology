@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_psycho"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardBackgroundColor="@color/redLight_A200"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="6dp"
+    app:contentPadding="4dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/psycoCardImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/psicologo1"/>
+
+        <TextView
+            android:id="@+id/psycoPerfilCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_perfil_card"
+            android:textColor="@color/secondaryColor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/psycoCardImage"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/psycoNameCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_name_card"
+            android:textColor="@color/secondaryColor"
+            android:textSize="20sp"
+            android:layout_toEndOf="@id/psycoCardImage"
+            android:layout_below="@id/psycoPerfilCard" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

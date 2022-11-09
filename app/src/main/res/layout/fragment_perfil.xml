@@ -1,14 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/contraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/fondo"
     tools:context=".view.ui.fragments.PerfilFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/datosPersonales"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:text="@string/datos_personales_text"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/secondaryColor"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/imagenFoto"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/datosPersonales" />
+
+    <ImageButton
+        android:id="@+id/cameraButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/style_image_button"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintEnd_toStartOf="@id/galeryButton"
+        app:layout_constraintStart_toStartOf="@id/imagenFoto"
+        app:layout_constraintTop_toBottomOf="@id/imagenFoto"
+        tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <ImageButton
+        android:id="@+id/galeryButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/style_image_button"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_folder"
+        app:layout_constraintEnd_toEndOf="@id/imagenFoto"
+        app:layout_constraintStart_toEndOf="@id/cameraButton"
+        app:layout_constraintTop_toBottomOf="@id/imagenFoto"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <LinearLayout
+        android:id="@+id/userLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/style_borde_text"
+        app:layout_constraintTop_toBottomOf="@id/cameraButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/perfilUserTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Usuario:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/secondaryColor"/>
+
+        <TextView
+            android:id="@+id/perfilUserText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryColor"
+            android:text="usuario"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nameLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/style_borde_text"
+        app:layout_constraintTop_toBottomOf="@id/userLinearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/perfilNameTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre completo:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/secondaryColor"/>
+
+        <TextView
+            android:id="@+id/perfilNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryColor"
+            android:textSize="18sp"
+            android:text="nombre" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emailLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/style_borde_text"
+        app:layout_constraintTop_toBottomOf="@id/nameLinearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/perfilEmailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Correo electrónico:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/secondaryColor"/>
+
+        <TextView
+            android:id="@+id/perfilEmailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryColor"
+            android:textSize="18sp"
+            android:text="email" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/phoneLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/style_borde_text"
+        app:layout_constraintTop_toBottomOf="@id/emailLinearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/perfilPhoneTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Teléfono:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/secondaryColor"/>
+
+        <TextView
+            android:id="@+id/perfilPhoneText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryColor"
+            android:textSize="18sp"
+            android:text="Telefono" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/AddressLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/style_borde_text"
+        app:layout_constraintTop_toBottomOf="@id/phoneLinearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/perfilAddressTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/secondaryColor"/>
+
+        <TextView
+            android:id="@+id/perfilAddressText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryColor"
+            android:textSize="18sp"
+            android:text="Direccion" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -60,33 +60,6 @@
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--            android:id="@+id/lastNameTextInput"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="5dp"-->
-<!--            android:hint="@string/text_lastName"-->
-<!--            android:importantForAutofill="no"-->
-<!--            android:layout_marginStart="40dp"-->
-<!--            android:layout_marginEnd="40dp"-->
-<!--            android:textColorHint="@color/secondaryColor"-->
-<!--            app:hintTextColor="@color/secondaryColor"-->
-<!--            app:boxStrokeColor="@color/redDark_A200"-->
-<!--            app:startIconDrawable="@drawable/ic_user"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/firstNameTextInput"-->
-<!--            tools:ignore="TextContrastCheck">-->
-
-<!--            <com.google.android.material.textfield.TextInputEditText-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:lines="1"-->
-<!--                android:textColor="@color/secondaryColor"-->
-<!--                android:inputType="textPersonName"-->
-<!--                tools:ignore="TextContrastCheck" />-->
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailTextInput"

@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.aboutButton.setOnClickListener{
-            navegateTo(PhotoActivity())
+            navegateTo(AboutActivity())
         }
 
         binding.loginButton.setOnClickListener{

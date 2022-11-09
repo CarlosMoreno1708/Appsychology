@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.carlosmoreno.appsychology.R
 import com.carlosmoreno.appsychology.view.ui.activities.LoginActivity
@@ -20,11 +21,8 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-        val cerrarSesionButton = view.findViewById<Button>(R.id.cerrarSesionButton)
 
-        cerrarSesionButton.setOnClickListener {
-            val intent = Intent(context, LoginActivity::class.java)
-            startActivity(intent) }
+        (activity as AppCompatActivity).supportActionBar?.title = "Home"
 
         return view
     }
@@ -33,11 +31,33 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val cardPsico = view.findViewById<ImageView>(R.id.cardPsiciologos)
+        val cardAgenda = view.findViewById<ImageView>(R.id.cardAgenda)
+        val cardMiperfil = view.findViewById<ImageView>(R.id.cardMiPerfil)
+        val cardUbicacion = view.findViewById<ImageView>(R.id.cardUbicacion)
+
+        val cerrarSesionButton = view.findViewById<Button>(R.id.cerrarSesionButton)
 
         cardPsico.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_psychoListFragment)
+        }
+
+        cardMiperfil.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_perfilFragment)
         }
 
+        cardAgenda.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_agendaFragment)
+        }
+
+        cardUbicacion.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
+        }
+
+        cerrarSesionButton.setOnClickListener {
+            requireActivity().finish()
+            val intent = Intent(context, LoginActivity::class.java)
+            startActivity(intent) }
     }
 
 }
+

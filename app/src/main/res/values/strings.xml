@@ -23,4 +23,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_cerrar_sesion">Cerrar sesión</string>
+    <string name="text_derechos">Todos los derechos reservados.</string>
+    <string name="text_ubicacion">Ubicación</string>
+    <string name="text_perfil_card">Perfil:</string>
+    <string name="text_name_card">Nombre:</string>
+    <string name="datos_personales_text">Datos personales</string>
 </resources>
