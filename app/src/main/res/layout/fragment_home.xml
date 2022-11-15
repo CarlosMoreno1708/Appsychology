@@ -216,22 +216,22 @@
             </GridLayout>
         </ScrollView>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/cerrarSesionButton"
-            android:layout_width="180dp"
-            android:layout_height="45dp"
-            android:background="@drawable/style_custom_button"
-            android:padding="1dp"
-            android:text="@string/text_cerrar_sesion"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="@color/secondaryColor"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            app:backgroundTint="@null"
-            android:layout_marginTop="30dp"
-            tools:ignore="TextContrastCheck"
-            android:layout_gravity="center"/>
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/cerrarSesionButton"-->
+<!--            android:layout_width="180dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:background="@drawable/style_custom_button"-->
+<!--            android:padding="1dp"-->
+<!--            android:text="@string/text_cerrar_sesion"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/secondaryColor"-->
+<!--            android:textSize="17sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            tools:ignore="TextContrastCheck"-->
+<!--            android:layout_gravity="center"/>-->
 
     </LinearLayout>
 </LinearLayout>

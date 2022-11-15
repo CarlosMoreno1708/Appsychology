@@ -88,7 +88,8 @@
             android:text="Usuario:"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/secondaryColor"/>
+            android:textColor="@color/secondaryColor"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/perfilUserText"
@@ -96,7 +97,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryColor"
             android:text="usuario"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
     <LinearLayout
@@ -129,7 +131,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryColor"
             android:textSize="18sp"
-            android:text="nombre" />
+            android:text="nombre"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
     <LinearLayout
@@ -162,7 +165,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryColor"
             android:textSize="18sp"
-            android:text="email" />
+            android:text="email"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
     <LinearLayout
@@ -195,7 +199,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryColor"
             android:textSize="18sp"
-            android:text="Telefono" />
+            android:text="Telefono"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
     <LinearLayout

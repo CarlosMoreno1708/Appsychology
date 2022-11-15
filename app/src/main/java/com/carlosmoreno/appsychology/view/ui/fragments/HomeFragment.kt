@@ -1,20 +1,24 @@
 package com.carlosmoreno.appsychology.view.ui.fragments
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.carlosmoreno.appsychology.R
 import com.carlosmoreno.appsychology.view.ui.activities.LoginActivity
+import com.carlosmoreno.appsychology.view.ui.activities.UserActivity.Companion.EXTRA_USER
 
 class HomeFragment : Fragment() {
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -22,20 +26,18 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        (activity as AppCompatActivity).supportActionBar?.title = "Home"
-
-        return view
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).supportActionBar?.title = "Inicio"
 
         val cardPsico = view.findViewById<ImageView>(R.id.cardPsiciologos)
         val cardAgenda = view.findViewById<ImageView>(R.id.cardAgenda)
         val cardMiperfil = view.findViewById<ImageView>(R.id.cardMiPerfil)
         val cardUbicacion = view.findViewById<ImageView>(R.id.cardUbicacion)
 
-        val cerrarSesionButton = view.findViewById<Button>(R.id.cerrarSesionButton)
+        val userText = view.findViewById<TextView>(R.id.userText)
+
+        val dateUser = requireActivity().intent.getStringExtra(EXTRA_USER)
+
+        userText.text ="Usuario: $dateUser"
 
         cardPsico.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_psychoListFragment)
@@ -53,11 +55,6 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
         }
 
-        cerrarSesionButton.setOnClickListener {
-            requireActivity().finish()
-            val intent = Intent(context, LoginActivity::class.java)
-            startActivity(intent) }
+        return view
     }
-
 }
-

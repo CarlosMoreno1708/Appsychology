@@ -13,19 +13,19 @@
         android:layout_height="wrap_content"
         android:background="@drawable/fondo">
 
-   <TextView
+        <TextView
             android:id="@+id/datosTitle"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="@string/title_ingresar_datos"
             android:textAlignment="center"
-            android:layout_marginTop="30dp"
             android:textColor="@color/secondaryColor"
-            android:textStyle="bold"
             android:textSize="30sp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -54,6 +54,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:enabled="false"
                 android:inputType="textPersonName"
                 android:lines="1"
                 android:textColor="@color/secondaryColor"
@@ -121,9 +122,10 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:enabled="false"
+                android:inputType="phone"
                 android:lines="1"
                 android:textColor="@color/secondaryColor"
-                android:inputType="phone"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -154,10 +156,11 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lines="1"
+                android:enabled="false"
                 android:inputType="textPostalAddress"
+                android:lines="1"
                 android:textColor="@color/secondaryColor"
-                tools:ignore="TextContrastCheck"/>
+                tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -187,9 +190,10 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:enabled="false"
+                android:inputType="text"
                 android:lines="1"
                 android:textColor="@color/secondaryColor"
-                android:inputType="text"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 

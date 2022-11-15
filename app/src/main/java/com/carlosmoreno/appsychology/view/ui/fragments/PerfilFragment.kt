@@ -1,5 +1,6 @@
 package com.carlosmoreno.appsychology.view.ui.fragments
 
+import android.annotation.SuppressLint
 import android.app.Activity.RESULT_OK
 import android.content.Context
 import android.content.Intent
@@ -38,9 +39,6 @@ class PerfilFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.title = "Mi perfil"
 
-        //Metodo para obtener los datos del usuario que inicio sesión.
-        getDateUser()
-
         btnCamara.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE).also {
                 it.resolveActivity(requireActivity().packageManager).also { componentName ->
@@ -60,6 +58,13 @@ class PerfilFragment : Fragment() {
         }
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //Metodo para obtener los datos del usuario que inicio sesión.
+        getDateUser()
     }
 
     private fun getDateUser() {

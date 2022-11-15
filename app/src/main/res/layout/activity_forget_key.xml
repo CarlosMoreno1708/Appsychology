@@ -34,85 +34,64 @@
         android:id="@+id/logoImage"
         android:layout_width="160dp"
         android:layout_height="140dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="40dp"
         android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/emailForgetKey"
+        app:layout_constraintBottom_toTopOf="@id/textInfo"
         app:srcCompat="@drawable/logo" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:id="@+id/emailForgetKey"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:hint="@string/text_email"
-        android:importantForAutofill="no"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:textColorHint="@color/secondaryColor"
-        app:hintTextColor="@color/secondaryColor"
-        app:boxStrokeColor="@color/gray"
-        app:startIconDrawable="@drawable/ic_email"
-        app:startIconTint="@color/gray"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:errorEnabled="true"
-        app:errorIconDrawable="@null"
-        app:errorTextColor="@color/red"
-        app:boxStrokeErrorColor="@color/red"
-        tools:ignore="TextContrastCheck">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textInfo"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:lines="1"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="Se enviará un correo electrónico para recuperar su contraseña"
+            android:textAlignment="center"
             android:textColor="@color/secondaryColor"
-            android:inputType="textEmailAddress"
-            tools:ignore="TextContrastCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/emailForgetKey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:id="@+id/passwordForgetKey"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:hint="@string/text_passwordNew"
-        android:importantForAutofill="no"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:textColorHint="@color/secondaryColor"
-        app:hintTextColor="@color/secondaryColor"
-        app:boxStrokeColor="@color/gray"
-        app:startIconDrawable="@drawable/ic_lock"
-        app:startIconTint="@color/gray"
-        app:endIconMode="password_toggle"
-        app:endIconTint="@color/gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailForgetKey"
-        app:errorEnabled="true"
-        app:errorIconDrawable="@null"
-        app:errorTextColor="@color/red"
-        app:boxStrokeErrorColor="@color/red"
-        tools:ignore="TextContrastCheck">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailForgetKey"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:lines="1"
-            android:textColor="@color/secondaryColor"
-            android:inputType="textPassword"
-            tools:ignore="TextContrastCheck" />
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:hint="@string/text_email"
+            android:importantForAutofill="no"
+            android:textColorHint="@color/secondaryColor"
+            app:boxStrokeColor="@color/gray"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="@color/secondaryColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.65"
+            app:startIconDrawable="@drawable/ic_email"
+            app:startIconTint="@color/gray"
+            tools:ignore="TextContrastCheck">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:textColor="@color/secondaryColor"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-
-    <Button
+        <Button
         android:id="@+id/recuperarButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -130,7 +109,7 @@
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordForgetKey"
+        app:layout_constraintTop_toBottomOf="@+id/emailForgetKey"
         tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

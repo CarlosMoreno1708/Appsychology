@@ -2,44 +2,77 @@ package com.carlosmoreno.appsychology.view.ui.activities
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.PatternsCompat
-import com.carlosmoreno.appsychology.R
 import com.carlosmoreno.appsychology.databinding.ActivityRegisterBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import java.util.regex.Pattern
 
 class RegisterActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityRegisterBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val email = binding.emailTextInput.editText
+        val password = binding.passwordTextInput.editText
+
+        firebaseAuth= Firebase.auth
         binding.registerButton2.setOnClickListener {
             validate()
+            if(validate()){
+                createUser(email?.text.toString(), password?.text.toString())
+            }
         }
     }
 
-    private fun validate() {
-        val result = arrayOf(
+//  Con el sigte metodo se crea un usuario en la BD de firebase.
+    private fun createUser(email: String, password: String){
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener {Task ->
+                if(Task.isSuccessful){
+                    Toast.makeText(baseContext, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                    //Para navegar a la activity LoginActivity
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }else{
+                    Toast.makeText(baseContext, "Error de registro", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+    private fun validate(): Boolean {
+      /*  val result = arrayOf(
             validateName(),
             validateEmail(),
             validateAddress(),
             validatePhone(),
             validateUser(),
             validatePassword()
+        )*/
+        val result = arrayOf(
+            validateEmail(),
+            validatePassword()
         )
 
-        if (false in result){
-            return
-        }
-        registerUser()
+        return if (false in result){
+            false
+        }else return true
+
+        //registerUser()
     }
 
+    //Con el sigte metodo se crea un usuario y se almacena en la BD local del teléfono con
+    //shared preferences
     private fun registerUser(){
         val user = binding.userTextInput.editText?.text.toString()
         val password = binding.passwordTextInput.editText?.text.toString()
@@ -65,6 +98,7 @@ class RegisterActivity : AppCompatActivity() {
         //Para navegar a la activity LoginActivity
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
     private fun validateName():Boolean{
@@ -143,7 +177,10 @@ class RegisterActivity : AppCompatActivity() {
         return if(password.isEmpty()){
             binding.passwordTextInput.error = "Este campo no puede estar vacío"
             false
-        }else if (!requerimientos.matcher(password).matches()){
+        }else if(password.length < 6){
+            binding.passwordTextInput.error = "Debe tener al menos 6 caracteres"
+            false
+        } else if (!requerimientos.matcher(password).matches()){
             binding.passwordTextInput.error = "Contraseña muy débil"
             false
         }else{
