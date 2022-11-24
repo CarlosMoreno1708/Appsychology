@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/fondo">
 
-
         <TextView
             android:id="@+id/title2Text"
             android:layout_width="0dp"

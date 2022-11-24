@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/contraintLayout"
@@ -13,7 +14,7 @@
     android:background="@drawable/fondo"
     tools:context=".view.ui.fragments.PerfilFragment">
 
-    <TextView
+        <TextView
         android:id="@+id/datosPersonales"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -96,7 +97,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryColor"
-            android:text="usuario"
             android:textSize="18sp"
             tools:ignore="HardcodedText" />
     </LinearLayout>
@@ -120,7 +120,7 @@
             android:id="@+id/perfilNameTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre completo:"
+            android:text="Nombre:"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/secondaryColor"/>
@@ -131,7 +131,6 @@
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryColor"
             android:textSize="18sp"
-            android:text="nombre"
             tools:ignore="HardcodedText" />
     </LinearLayout>
 
@@ -146,7 +145,7 @@
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:background="@drawable/style_borde_text"
-        app:layout_constraintTop_toBottomOf="@id/nameLinearLayout"
+        app:layout_constraintTop_toBottomOf="@id/lastNameLinearLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -165,7 +164,6 @@
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryColor"
             android:textSize="18sp"
-            android:text="email"
             tools:ignore="HardcodedText" />
     </LinearLayout>
 
@@ -199,12 +197,11 @@
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryColor"
             android:textSize="18sp"
-            android:text="Telefono"
             tools:ignore="HardcodedText" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/AddressLinearLayout"
+        android:id="@+id/lastNameLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -214,28 +211,45 @@
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:background="@drawable/style_borde_text"
-        app:layout_constraintTop_toBottomOf="@id/phoneLinearLayout"
+        app:layout_constraintTop_toBottomOf="@id/nameLinearLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/perfilAddressTitle"
+            android:id="@+id/perfilLastNameTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dirección:"
+            android:text="Apellido:"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/secondaryColor"/>
 
         <TextView
-            android:id="@+id/perfilAddressText"
+            android:id="@+id/perfilLastNameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/secondaryColor"
-            android:textSize="18sp"
-            android:text="Direccion" />
+            android:textSize="18sp" />
     </LinearLayout>
+
+        <Button
+            android:id="@+id/btnEditUser"
+            style="@style/Theme.Material3.Dark.NoActionBar"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/style_custom_button"
+            android:text="@string/text_edit"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/secondaryColor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneLinearLayout"
+            tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

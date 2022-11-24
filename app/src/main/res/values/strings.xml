@@ -11,12 +11,13 @@
     <string name="text_password">Contraseña</string>
     <string name="text_passwordNew">Contraseña nueva</string>
     <string name="todo">TODO</string>
-    <string name="text_firstName">Nombre completo</string>
+    <string name="text_firstName">Nombre</string>
     <string name="text_lastName">Apellido</string>
     <string name="text_email">Correo electrónico</string>
     <string name="text_cellPhone">Teléfono</string>
     <string name="text_address">Dirección</string>
     <string name="title_ingresar_datos">Ingresar datos</string>
+    <string name="title_actualizar_datos">Actualizar datos</string>
     <string name="text_recuperar">Enviar</string>
     <string name="text_ingresar">Ingresar</string>
     <string name="text_registrar">Registrar</string>
@@ -28,4 +29,19 @@
     <string name="text_perfil_card">Perfil:</string>
     <string name="text_name_card">Nombre:</string>
     <string name="datos_personales_text">Datos personales</string>
+    <string name="text_passwordConfirm">Confirmar contraseña</string>
+    <string name="text_bienvenido">Bienvenido</string>
+    <string name="text_save">Guardar</string>
+    <string name="text_cancel">Cancelar</string>
+    <string name="text_edit">Editar</string>
+    <string name="title_activity_register_end">RegisterEndActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="text_datos_personales">Datos personales</string>
 </resources>

@@ -1,60 +1,63 @@
 package com.carlosmoreno.appsychology.view.ui.fragments
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.carlosmoreno.appsychology.R
-import com.carlosmoreno.appsychology.view.ui.activities.LoginActivity
-import com.carlosmoreno.appsychology.view.ui.activities.UserActivity.Companion.EXTRA_USER
+import com.carlosmoreno.appsychology.R.layout
+import com.carlosmoreno.appsychology.databinding.FragmentHomeBinding
+import com.carlosmoreno.appsychology.view.ui.activities.UserActivity.Companion.EXTRA_ID
+import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeFragment : Fragment() {
 
-    @SuppressLint("SetTextI18n")
+    private lateinit var binding: FragmentHomeBinding
+    private val db = FirebaseFirestore.getInstance()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         (activity as AppCompatActivity).supportActionBar?.title = "Inicio"
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
-        val cardPsico = view.findViewById<ImageView>(R.id.cardPsiciologos)
-        val cardAgenda = view.findViewById<ImageView>(R.id.cardAgenda)
-        val cardMiperfil = view.findViewById<ImageView>(R.id.cardMiPerfil)
-        val cardUbicacion = view.findViewById<ImageView>(R.id.cardUbicacion)
+        return binding.root
+    }
 
-        val userText = view.findViewById<TextView>(R.id.userText)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        val dateUser = requireActivity().intent.getStringExtra(EXTRA_USER)
+        val userID: String? = requireActivity().intent.getStringExtra(EXTRA_ID)
 
-        userText.text ="Usuario: $dateUser"
+        db.collection("usuarios").document(userID?:"").get().addOnSuccessListener {
+            binding.userText.text = it.get("usuario") as String
+        }
 
-        cardPsico.setOnClickListener {
+        binding.cardPsiciologos.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_psychoListFragment)
         }
 
-        cardMiperfil.setOnClickListener {
+        binding.cardMiPerfil.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_perfilFragment)
         }
 
-        cardAgenda.setOnClickListener {
+        binding.cardAgenda.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_agendaFragment)
         }
 
-        cardUbicacion.setOnClickListener {
+        binding.cardUbicacion.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
         }
 
-        return view
     }
 }

@@ -1,6 +1,5 @@
 package com.carlosmoreno.appsychology.view.ui.activities
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -25,10 +24,11 @@ class RegisterActivity : AppCompatActivity() {
         val email = binding.emailTextInput.editText
         val password = binding.passwordTextInput.editText
 
-        firebaseAuth= Firebase.auth
-        binding.registerButton2.setOnClickListener {
+        firebaseAuth = Firebase.auth
+
+        binding.btnRegisterUser.setOnClickListener {
             validate()
-            if(validate()){
+            if (validate()) {
                 createUser(email?.text.toString(), password?.text.toString())
             }
         }
@@ -40,8 +40,10 @@ class RegisterActivity : AppCompatActivity() {
             .addOnCompleteListener {Task ->
                 if(Task.isSuccessful){
                     Toast.makeText(baseContext, "Registro exitoso", Toast.LENGTH_SHORT).show()
-                    //Para navegar a la activity LoginActivity
-                    val intent = Intent(this, LoginActivity::class.java)
+                    val id = firebaseAuth.uid
+                    //Para navegar a la activity RegisterEndActivity
+                    val intent = Intent(this, RegisterEndActivity::class.java)
+                    intent.putExtra("id", id)
                     startActivity(intent)
                     finish()
                 }else{
@@ -61,7 +63,8 @@ class RegisterActivity : AppCompatActivity() {
         )*/
         val result = arrayOf(
             validateEmail(),
-            validatePassword()
+            validatePassword(),
+            validatePasswordConfirm(),
         )
 
         return if (false in result){
@@ -70,6 +73,83 @@ class RegisterActivity : AppCompatActivity() {
 
         //registerUser()
     }
+
+    private fun validateEmail(): Boolean {
+        val email = binding.emailTextInput.editText?.text.toString()
+        return if (email.isEmpty()) {
+            binding.emailTextInput.error = "Este campo no puede estar vacío"
+            false
+        } else if (!PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()){
+            binding.emailTextInput.error = "Correo electrónico no válido"
+            false
+        } else {
+            binding.emailTextInput.error = null
+            true
+        }
+    }
+
+    private fun validatePassword(): Boolean{
+        val password = binding.passwordTextInput.editText?.text.toString()
+        val requerimientos = Pattern.compile(
+            "^"+
+                    "(?=.*[0-9])" +         //Al menos 1 número
+                    "(?=.*[a-z])" +         //Al menos 1 letra minúscula
+                    "(?=.*[A-Z])" +         //Al menos 1 letra mayúscula
+                    "(?=.*[@#\$%^&+=])" +   //Al menos 1 caracter especial
+                    "(?=\\S+$)" +           //sin espacios en blanco
+                    ".{6,}" +               //Al menos 6 caracteres
+                    "$"
+        )
+
+        return if(password.isEmpty()){
+            binding.passwordTextInput.error = "Este campo no puede estar vacío"
+            false
+        }else if(password.length < 6){
+            binding.passwordTextInput.error = "Debe tener al menos 6 caracteres"
+            false
+        } else if (!requerimientos.matcher(password).matches()){
+            binding.passwordTextInput.error = "Contraseña muy débil"
+            false
+        }else{
+            binding.passwordTextInput.error = null
+            true
+        }
+    }
+
+    private fun validatePasswordConfirm(): Boolean{
+        val passwordConfirm = binding.passwordConfirmTextInput.editText?.text.toString()
+        val password = binding.passwordTextInput.editText?.text.toString()
+        val requerimientos = Pattern.compile(
+            "^"+
+                    "(?=.*[0-9])" +         //Al menos 1 número
+                    "(?=.*[a-z])" +         //Al menos 1 letra minúscula
+                    "(?=.*[A-Z])" +         //Al menos 1 letra mayúscula
+                    "(?=.*[@#\$%^&+=])" +   //Al menos 1 caracter especial
+                    "(?=\\S+$)" +           //sin espacios en blanco
+                    ".{6,}" +               //Al menos 6 caracteres
+                    "$"
+        )
+
+        return if(passwordConfirm.isEmpty()){
+            binding.passwordConfirmTextInput.error = "Este campo no puede estar vacío"
+            false
+        }else if(passwordConfirm.length < 6){
+            binding.passwordConfirmTextInput.error = "Debe tener al menos 6 caracteres"
+            false
+        } else if (!requerimientos.matcher(passwordConfirm).matches()){
+            binding.passwordConfirmTextInput.error = "Contraseña muy débil"
+            false
+        }else if (password != passwordConfirm) {
+            binding.passwordConfirmTextInput.error = "Contraseñas no coinciden"
+            false
+        }else{
+            binding.passwordConfirmTextInput.error = null
+            true
+        }
+    }
+}
+
+/*
 
     //Con el sigte metodo se crea un usuario y se almacena en la BD local del teléfono con
     //shared preferences
@@ -112,19 +192,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun validateEmail(): Boolean {
-        val email = binding.emailTextInput.editText?.text.toString()
-        return if (email.isEmpty()) {
-            binding.emailTextInput.error = "Este campo no puede estar vacío"
-            false
-        } else if (!PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()){
-            binding.emailTextInput.error = "Correo electrónico no válido"
-            false
-        } else {
-            binding.emailTextInput.error = null
-            true
-        }
-    }
+
 
     private fun validatePhone(): Boolean{
         val phone = binding.phoneTextInput.editText?.text.toString()
@@ -160,33 +228,5 @@ class RegisterActivity : AppCompatActivity() {
         }
 
     }
+*/
 
-    private fun validatePassword(): Boolean{
-        val password = binding.passwordTextInput.editText?.text.toString()
-        val requerimientos = Pattern.compile(
-            "^"+
-                    "(?=.*[0-9])" +         //Al menos 1 número
-                    "(?=.*[a-z])" +         //Al menos 1 letra minúscula
-                    "(?=.*[A-Z])" +         //Al menos 1 letra mayúscula
-                    "(?=.*[@#\$%^&+=])" +   //Al menos 1 caracter especial
-                    "(?=\\S+$)" +           //sin espacios en blanco
-                    ".{6,}" +               //Al menos 6 caracteres
-                    "$"
-        )
-
-        return if(password.isEmpty()){
-            binding.passwordTextInput.error = "Este campo no puede estar vacío"
-            false
-        }else if(password.length < 6){
-            binding.passwordTextInput.error = "Debe tener al menos 6 caracteres"
-            false
-        } else if (!requerimientos.matcher(password).matches()){
-            binding.passwordTextInput.error = "Contraseña muy débil"
-            false
-        }else{
-            binding.passwordTextInput.error = null
-            true
-        }
-    }
-
-}

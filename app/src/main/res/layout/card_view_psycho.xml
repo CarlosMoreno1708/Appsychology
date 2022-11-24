@@ -8,7 +8,9 @@
     app:cardBackgroundColor="@color/redLight_A200"
     app:cardCornerRadius="20dp"
     app:cardElevation="6dp"
-    app:contentPadding="4dp">
+    app:contentPadding="4dp"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground">
 
     <RelativeLayout
         android:layout_width="wrap_content"

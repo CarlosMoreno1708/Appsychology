@@ -4,17 +4,21 @@
         android:id="@+id/home"
         android:title="Inicio"
         android:icon="@drawable/ic_home" />
-<!--    <item-->
-<!--        android:id="@+id/Agenda"-->
-<!--        android:title="Agenda"-->
-<!--        android:icon="@drawable/ic_agenda" />-->
-<!--    <item-->
-<!--        android:id="@+id/perfil"-->
-<!--        android:title="Perfil"-->
-<!--        android:icon="@drawable/ic_user" />-->
-<!--    <item-->
-<!--        android:id="@+id/mapa"-->
-<!--        android:title="Mapa"-->
-<!--        android:icon="@drawable/ic_location" />-->
+    <item
+        android:id="@+id/perfil"
+        android:title="Perfil"
+        android:icon="@drawable/ic_user" />
+    <item
+        android:id="@+id/psicologos"
+        android:title="Psicólogos"
+        android:icon="@drawable/ic_psycho" />
+    <item
+        android:id="@+id/agenda"
+        android:title="Agenda"
+        android:icon="@drawable/ic_agenda" />
+    <item
+        android:id="@+id/mapa"
+        android:title="Mapa"
+        android:icon="@drawable/ic_location" />
 
 </menu>

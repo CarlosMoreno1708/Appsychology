@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
-
-<!--    <uses-permission android:name="android.permission.CAMERA" />-->
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
+
     <uses-feature
         android:name="android.hardware.camera.any"
-        android:required="true" />
-<!--    <uses-feature android:name="android.hardware.camera.autofocus" />-->
+        android:required="true" /> <!-- <uses-feature android:name="android.hardware.camera.autofocus" /> -->
     <queries>
         <intent>
             <action android:name="media.IMAGE_CAPTURE" />
@@ -25,49 +24,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Appsychology"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".view.ui.activities.RegisterEndActivity"
+            android:exported="false"
+            android:label="Completar registro"
+            android:theme="@style/Theme.Appsychology.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".view.ui.activities.UserActivity"
             android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout"
-            android:screenOrientation="portrait"
-            android:exported="false" >
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".view.ui.activities.ForgetKeyActivity"
+            android:configChanges="screenSize|orientation"
             android:exported="false"
             android:label="Recuperar contraseña"
-            android:configChanges="screenSize|orientation"
-            android:parentActivityName=".view.ui.activities.LoginActivity" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".view.ui.activities.PhotoActivity"
-            android:exported="false" >
+            android:parentActivityName=".view.ui.activities.LoginActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".view.ui.activities.RegisterActivity"
+            android:configChanges="screenSize|orientation"
             android:exported="false"
             android:label="Registro de usuario"
-            android:configChanges="screenSize|orientation"
-            android:parentActivityName=".view.ui.activities.MainActivity" >
+            android:parentActivityName=".view.ui.activities.MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".view.ui.activities.LoginActivity"
+            android:configChanges="screenSize|orientation"
             android:exported="false"
             android:label="Iniciar sesión"
-            android:configChanges="screenSize|orientation"
-            android:parentActivityName=".view.ui.activities.MainActivity" >
+            android:parentActivityName=".view.ui.activities.MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -76,7 +77,7 @@
             android:name=".view.ui.activities.AboutActivity"
             android:exported="false"
             android:label="Quienes somos"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -84,8 +85,8 @@
         <activity
             android:name=".view.ui.activities.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Appsychology.NoActionBar"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Appsychology.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -93,8 +94,8 @@
         <activity
             android:name=".view.ui.activities.Splash"
             android:exported="true"
-            android:theme="@style/Theme.Appsychology.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Appsychology.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -111,15 +112,14 @@
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
-
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+                android:resource="@xml/file_paths" />
         </provider>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"/>
+            android:value="@string/google_maps_key" />
     </application>
 
 </manifest>

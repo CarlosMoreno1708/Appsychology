@@ -1,6 +1,7 @@
-package com.carlosmoreno.appsychology.model
+package com.carlosmoreno.appsychology.data
 
 import com.carlosmoreno.appsychology.R
+import com.carlosmoreno.appsychology.model.Psicologos
 
 object DataSource {
     val psycologos: MutableList<Psicologos> = mutableListOf(
